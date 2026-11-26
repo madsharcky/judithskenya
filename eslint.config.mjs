@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored agent tooling and generated assets: third-party code, never linted.
+    ".agents/**",
+    ".hermes/**",
+    "public/**",
   ]),
 ]);
 

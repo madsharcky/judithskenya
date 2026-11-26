@@ -20,4 +20,8 @@ Default five canonical labels: needs-triage, needs-info, ready-for-agent, ready-
 
 ### Domain docs
 
-Single-context: `GLOSSARY.md` at the repo root + `docs/adr/`. See `docs/agents/domain.md`.
+Single-context: `GLOSSARY.md` at the repo root + `docs/adr/`. See `docs/agents/domain.md`. Coding rules the review stage enforces: `CODING_STANDARDS.md`.
+
+### Client brief and research
+
+`docs/customer/to-questionnaire-judiths-kenya-tours.md` — the client's verbatim answers; the source of truth for requirements and copy. `docs/research/styling-guide-research.md` — the visual direction: palette, fonts, page structure.
