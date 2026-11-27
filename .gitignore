@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design-taste-frontend build state (deal history, chrome profiles, screenshots)
+/.taste-skill/
