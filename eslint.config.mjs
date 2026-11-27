@@ -17,6 +17,16 @@ const eslintConfig = defineConfig([
     ".hermes/**",
     "public/**",
   ]),
+  {
+    // The design kit is served as plain files from public/assets and linked from
+    // the root layout on purpose (never through the bundler), so the two
+    // pages-router-era rules that forbid manual <link> tags do not apply here.
+    files: ["app/layout.tsx"],
+    rules: {
+      "@next/next/no-page-custom-font": "off",
+      "@next/next/no-css-tags": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;

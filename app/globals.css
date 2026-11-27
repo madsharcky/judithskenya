@@ -1,26 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/*
+  The design system (public/assets/system.css and the kit stylesheets linked from
+  app/layout.tsx) is the single source of styling: palette, type scale, grid,
+  buttons and cards. This file only pulls in Tailwind's reset/utilities layer —
+  every rule the kit sets is unlayered CSS and wins over it.
+*/
