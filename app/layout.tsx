@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 /*
@@ -73,6 +74,7 @@ h3 { font-family: var(--font-text); letter-spacing: -0.01em; }
       <body>
         {children}
         <Script src="/assets/system.js" type="module" strategy="afterInteractive" />
+        <Analytics />
       </body>
     </html>
   );
