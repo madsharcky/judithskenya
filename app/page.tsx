@@ -1,3 +1,4 @@
+import Link from "next/link";
 /*
   Proposal C proof page. The design system (public/assets, linked in
   app/layout.tsx) is the only styling source; this page is a single section on
@@ -18,12 +19,12 @@ export default function Home() {
           on WhatsApp.
         </p>
         <div className="btn-row">
-          <a className="btn btn--primary" href="/tours">
+          <Link className="btn btn--primary" href="/tours">
             Explore our tours
-          </a>
-          <a className="btn btn--secondary" href="/contact">
+          </Link>
+          <Link className="btn btn--secondary" href="/contact">
             Get a quote
-          </a>
+          </Link>
         </div>
       </div>
     </section>
