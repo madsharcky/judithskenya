@@ -1,39 +1,47 @@
+import Link from "next/link";
+import { CATEGORIES, TOURS, COPY } from "@/lib/content";
+
 /*
-  Tours index — minimal shell. The four categories are the client's own tour
-  groupings (brief Q1), not an invented tour list: no package names, prices or
-  itineraries until the real tour data lands in a later ticket.
+  Tours index — the four categories and the archetype tours come from the
+  content module, the single source of tour data. The real page build (cards,
+  price slots, photography) lands in #5; this shell reads the module so there
+  is no second source of tour data anywhere.
 */
 
 export const metadata = { title: "Tours — RECAP Tours and Travel" };
-
-const CATEGORIES = [
-  "Wildlife safaris and national parks",
-  "Lake, nature and adventure",
-  "Coastal Kenya and beach holidays",
-  "Cultural, historical and unique experiences",
-];
 
 export default function ToursIndex() {
   return (
     <section className="section" aria-labelledby="tours-h">
       <div className="wrap">
         <div className="section-head">
-          <h1 id="tours-h">Tours</h1>
-          <p className="t-lead measure">
-            RECAP Tours and Travel plans safaris, nature escapes and coastal
-            stays around Kenya — every tour tailored to your schedule and budget.
-          </p>
+          <h1 id="tours-h">{COPY.toursIndex.h1}</h1>
+          <p className="t-lead measure">{COPY.toursIndex.lead}</p>
         </div>
         <div className="grid">
-          {CATEGORIES.map((category) => (
-            <div className="span-6 stack-2" key={category} data-placeholder="">
-              <h2>{category}</h2>
-              <p className="muted">
-                Tour list for this category is coming soon — ask a driver-guide
-                on WhatsApp for current options.
-              </p>
-            </div>
-          ))}
+          {CATEGORIES.map((category) => {
+            const tours = TOURS.filter((t) => t.category === category.id);
+            return (
+              <div className="span-6 stack-2" key={category.id}>
+                <h2>{category.name}</h2>
+                <p className="muted">{category.blurb}</p>
+                {tours.length > 0 ? (
+                  <ul className="stack-2">
+                    {tours.map((tour) => (
+                      <li key={tour.slug}>
+                        <Link href={`/tours/${tour.slug}`}>{tour.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="muted">
+                    Tour list for this category is coming soon — ask a
+                    driver-guide on WhatsApp for current options.
+                  </p>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

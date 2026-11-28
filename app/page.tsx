@@ -1,9 +1,9 @@
 import Link from "next/link";
+import { COPY } from "@/lib/content";
+
 /*
-  Proposal C proof page. The design system (public/assets, linked in
-  app/layout.tsx) is the only styling source; this page is a single section on
-  the kit's classes and tokens. The root layout renders the nav, this page's
-  sections and the footer; the real home page lands in #6.
+  Home — shell. The copy comes from the content module (RECAP's business voice,
+  brief Q17). The full home page (the seven sections, imagery) lands in #6.
 */
 
 export default function Home() {
@@ -12,19 +12,15 @@ export default function Home() {
       <div className="wrap">
         <div className="hero-text">
           <div className="section-head">
-            <h1 id="hero-h">Tours from Nairobi into the wild</h1>
+            <h1 id="hero-h">{COPY.home.h1}</h1>
           </div>
-          <p className="t-lead measure">
-            RECAP Tours and Travel plans day trips and safaris around your
-            schedule and your budget, and a driver-guide answers every enquiry
-            on WhatsApp.
-          </p>
+          <p className="t-lead measure">{COPY.home.lead}</p>
           <div className="btn-row">
-            <Link className="btn btn--primary" href="/tours">
-              Explore our tours
+            <Link className="btn btn--primary" href={COPY.home.primary.href}>
+              {COPY.home.primary.label}
             </Link>
-            <Link className="btn btn--secondary" href="/contact">
-              Get a quote
+            <Link className="btn btn--secondary" href={COPY.home.secondary.href}>
+              {COPY.home.secondary.label}
             </Link>
           </div>
         </div>

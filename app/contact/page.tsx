@@ -6,6 +6,7 @@
 */
 
 import Link from "next/link";
+import { COPY } from "@/lib/content";
 
 export const metadata = { title: "Contact — RECAP Tours and Travel" };
 
@@ -14,16 +15,11 @@ export default function Contact() {
     <section className="section" aria-labelledby="contact-h">
       <div className="wrap">
         <div className="section-head">
-          <h1 id="contact-h">Contact us</h1>
-          <p className="t-lead measure">
-            Get a quote from RECAP Tours and Travel. WhatsApp is the fastest
-            way to reach a driver-guide — send your dates and your budget and
-            we reply with a custom plan.
-          </p>
+          <h1 id="contact-h">{COPY.contact.h1}</h1>
+          <p className="t-lead measure">{COPY.contact.lead}</p>
         </div>
         <p data-placeholder="">
-          Official contacts are being confirmed — the WhatsApp number shown in
-          the corner is a placeholder. The online quote form is not live yet.
+          {COPY.contact.note} The online quote form is not live yet.
         </p>
         <div className="btn-row">
           <Link className="btn btn--primary" href="/tours">

@@ -1,0 +1,110 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-f181901610.webp",
+   "files": [
+    "photo-f181901610-500.webp",
+    "photo-f181901610-960.webp",
+    "photo-f181901610-1280.webp",
+    "photo-f181901610.webp",
+    "photo-f181901610-780x975.webp"
+   ],
+   "id": "f181901610",
+   "alt": "Landscape of Masai Mara, Kenya, at sunset",
+   "by": "Daniel Case",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Landscape_of_Masai_Mara,_Kenya,_at_sunset.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f124793824.webp",
+   "files": [
+    "photo-f124793824-500.webp",
+    "photo-f124793824-960.webp",
+    "photo-f124793824.webp"
+   ],
+   "id": "f124793824",
+   "alt": "Landscape, Masai Mara, Kenya (52452028118)",
+   "by": "flowcomm",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Landscape,_Masai_Mara,_Kenya_(52452028118).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f194876096.webp",
+   "files": [
+    "photo-f194876096-500.webp",
+    "photo-f194876096-960.webp",
+    "photo-f194876096.webp"
+   ],
+   "id": "f194876096",
+   "alt": "Lake Naivasha Kenya 0111",
+   "by": "Letherian3",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Lake_Naivasha_Kenya_0111.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f25863446.webp",
+   "files": [
+    "photo-f25863446-500.webp",
+    "photo-f25863446-960.webp",
+    "photo-f25863446.webp"
+   ],
+   "id": "f25863446",
+   "alt": "Diani beach",
+   "by": "FredD",
+   "licence": "CC BY-SA 3.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Diani_beach.JPG",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f172064342-960.webp",
+   "files": [
+    "photo-f172064342-500.webp",
+    "photo-f172064342-960.webp"
+   ],
+   "id": "f172064342",
+   "alt": "Karen Blixen Museum House",
+   "by": "さえぼー",
+   "licence": "CC0",
+   "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://commons.wikimedia.org/wiki/File:Karen_Blixen_Museum_House.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f2612785.webp",
+   "files": [
+    "photo-f2612785-500.webp",
+    "photo-f2612785-960.webp",
+    "photo-f2612785.webp"
+   ],
+   "id": "f2612785",
+   "alt": "Loxodonta africana -Amboseli National Park, Kenya-8",
+   "by": "Paul Mannix",
+   "licence": "CC BY-SA 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Loxodonta_africana_-Amboseli_National_Park,_Kenya-8.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f202243592-960.webp",
+   "files": [
+    "photo-f202243592-500.webp",
+    "photo-f202243592-960.webp"
+   ],
+   "id": "f202243592",
+   "alt": "View of Nairobi City, Kenya. As taken from Upper Hill",
+   "by": "Elite Jac",
+   "licence": "CC BY 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:View_of_Nairobi_City,_Kenya._As_taken_from_Upper_Hill.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

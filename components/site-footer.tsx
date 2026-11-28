@@ -1,14 +1,17 @@
 import Link from "next/link";
+import { CONTACTS } from "@/lib/content";
 
 /*
   The kit's closing footer (assets/system.css .footer.closing): row 1 the close,
-  row 2 the directory and the legal row. No credits line yet — the site shows no
-  photographs until the client supplies them (copy.md).
+  row 2 the directory and the legal row. No credits line here yet (the footer
+  line and the full credit list land with the pages that use the photographs —
+  see docs/content-module-report.md).
 
   Placeholder contacts (brief Q18: the official contacts arrive before launch):
-  the WhatsApp number and the social links are stand-ins, marked data-placeholder,
-  never a real-format number or address (CODING_STANDARDS). The legal row carries
-  the brand, the year and the social links — no line about the placeholder state.
+  the social links and the WhatsApp element are stand-ins, marked data-placeholder,
+  never a real-format number or address (CODING_STANDARDS). The values come from
+  the content module. The legal row carries the brand, the year and the social
+  links — no line about the placeholder state.
 */
 
 const YEAR = new Date().getFullYear();
@@ -35,12 +38,12 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
     title: "Follow",
     links: [
       {
-        href: "https://www.instagram.com/",
+        href: CONTACTS.instagram.href,
         label: "Instagram",
         placeholder: true,
       },
       {
-        href: "https://www.facebook.com/",
+        href: CONTACTS.facebook.href,
         label: "Facebook",
         placeholder: true,
       },
@@ -98,7 +101,7 @@ export default function SiteFooter() {
             <span>&copy; {YEAR} RECAP Tours and Travel</span>
             <div className="socials">
               <a
-                href="https://www.instagram.com/"
+                href={CONTACTS.instagram.href}
                 aria-label="RECAP on Instagram"
                 data-placeholder=""
               >
@@ -107,7 +110,7 @@ export default function SiteFooter() {
                 </svg>
               </a>
               <a
-                href="https://www.facebook.com/"
+                href={CONTACTS.facebook.href}
                 aria-label="RECAP on Facebook"
                 data-placeholder=""
               >

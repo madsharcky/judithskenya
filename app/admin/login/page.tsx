@@ -5,6 +5,7 @@
 */
 
 import Link from "next/link";
+import { COPY } from "@/lib/content";
 
 export const metadata = { title: "Admin — RECAP Tours and Travel" };
 
@@ -13,10 +14,9 @@ export default function AdminLogin() {
     <section className="section" aria-labelledby="admin-login-h">
       <div className="wrap">
         <div className="section-head">
-          <h1 id="admin-login-h">Admin</h1>
+          <h1 id="admin-login-h">{COPY.adminLogin.h1}</h1>
           <p className="t-lead measure" data-placeholder="">
-            The owner admin panel is being prepared. The password and access
-            are being set up — nothing is live yet.
+            {COPY.adminLogin.lead}
           </p>
         </div>
         <p>
