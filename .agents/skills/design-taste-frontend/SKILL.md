@@ -288,6 +288,20 @@ Read `copy.md`, `copy-voice.md`, `system.md`, `layout-v4.md` and `sections.md` i
    a word from the client's own copy that copy-lint FAILs is waived hit by hit, the brief as the reason
    (a word inside the client's name, as the logo or the title writes it, is not counted: one WARN).
 
+   **Reading the report.** Each run writes `report.json` in the `--out` folder (default: beside the page for a file, a temp folder keyed by the URL for a URL; the `out` field names it) and prints a table to stdout. Read the JSON, not the table: it is the full picture and the only place a `not checked` is said aloud.
+
+   - `counts` — `{"FAIL": n, "WARN": m}`: the headline tally, over widths + `sweep` + `narrow`. Read it first after every run.
+   - `checks` — every check id in the run (one key each) → `PASS` / `WARN` / `FAIL` / `not checked`: its worst result over all widths. `not checked` means a flag skipped it (`--no-slow`, `--no-reduced`), its probe errored out, or the width it runs at is missing — never re-read the page to "fix" it; look at `notChecked` below.
+   - `widths[]` — one block per width the browser walked (the run's `--widths`, default 1440, 1024, 820, 768, 390): `{width, height, screens, held, errors[], glAsked, findings[]}`. `screens` is how many screens it walked; `held` how many sit inside a held sticky stage; `glAsked` the number of WebGL contexts the page asked for; `errors[]` the probe errors — a non-empty `errors` means that width needs a re-run and its findings are thin, not that the page is fine; `findings[]` is the per-width list: `{check, sev, sel, text, msg, stop, crop, fix}` — `sel` the selector it fired on, `text` the text it read, `msg` the number it failed (``58% of the section is empty``), `crop` the crop to open, `fix` the remedy (read it before judging a waiver).
+   - `sweep` — the first-screen sweep at narrower widths (1280, 1152, 1024, 896, 768; any within 8px of a main width is skipped): cut text, spills, overflow and nav faults. `{widths: [...], errors[], findings[]}`; each finding carries `width` and `also` (the other sweep widths it fired at).
+   - `narrow` — the 320px walk: `{width, height, errors[], findings[]}`.
+   - `reduced` — the reduced-motion pass: `{screens, notRead}`. `notRead` above `screens`, or a `notChecked` line reading `reduced-motion (…)`, means that pass read too little — do not trust the tally until it clears.
+   - `hidden` — `{screens}` (plus `quick: true` in the gate's `--quick` mode): the hidden-content pass — text that appears only once a script reveals it.
+   - `slow` — `{stops, late}`: the slow-mobile-line pass (once, at the first phone width): `stops` is how many screens it walked, `late` how many stayed empty past 1 s.
+   - `shaders` — the number of shaders the page deals (0 on a page with no effect ground).
+   - `notChecked` — one string per skipped or unread check (`scroll-linked (stepping)`, `reduced-motion (3 of 5 screens read)`, `--no-slow`); `notCheckedAt` — the widths the browser could not walk. Both exist so a miss is named, never a silent PASS.
+   - `page`, `url`, `at`, `out` — what was opened, when, and from where.
+
 7. **Report:** the `GATE:` line first, then every waiver with its reason and every open FAIL; the
    kind, the deal (palette and why it fits, pairing, hero, grounds, effect, moments, scene); the
    voice card in one line and every copy-lint WARN kept, with why; the checker, layout and perf
