@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
 import "./globals.css";
 
 /*
@@ -72,9 +74,13 @@ h3 { font-family: var(--font-text); letter-spacing: -0.01em; }
         />
       </head>
       <body>
-        {children}
+        <SiteHeader />
+        <main id="top">{children}</main>
+        <SiteFooter />
         <Script src="/assets/system.js" type="module" strategy="afterInteractive" />
-        <Analytics />
+        <Script src="/assets/motion/motion.js" type="module" strategy="afterInteractive" />
+        <Script src="/assets/layout/layout.js" type="module" strategy="afterInteractive" />
+        {process.env.VERCEL && <Analytics />}
       </body>
     </html>
   );
