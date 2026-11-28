@@ -10,21 +10,23 @@ export default function Home() {
   return (
     <section className="section" aria-labelledby="hero-h">
       <div className="wrap">
-        <div className="section-head">
-          <h1 id="hero-h">Tours from Nairobi into the wild</h1>
-        </div>
-        <p className="t-lead measure">
-          RECAP Tours and Travel plans day trips and safaris around your
-          schedule and your budget, and a driver-guide answers every enquiry
-          on WhatsApp.
-        </p>
-        <div className="btn-row">
-          <Link className="btn btn--primary" href="/tours">
-            Explore our tours
-          </Link>
-          <Link className="btn btn--secondary" href="/contact">
-            Get a quote
-          </Link>
+        <div className="hero-text">
+          <div className="section-head">
+            <h1 id="hero-h">Tours from Nairobi into the wild</h1>
+          </div>
+          <p className="t-lead measure">
+            RECAP Tours and Travel plans day trips and safaris around your
+            schedule and your budget, and a driver-guide answers every enquiry
+            on WhatsApp.
+          </p>
+          <div className="btn-row">
+            <Link className="btn btn--primary" href="/tours">
+              Explore our tours
+            </Link>
+            <Link className="btn btn--secondary" href="/contact">
+              Get a quote
+            </Link>
+          </div>
         </div>
       </div>
     </section>

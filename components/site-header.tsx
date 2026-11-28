@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import WhatsAppButton from "./whatsapp-button";
+import PaletteSwitcher from "./palette-switcher";
 
 /*
   The kit's nav (assets/system.css .nav, assets/system.js): fixed bar, the logo on
@@ -64,6 +65,7 @@ export default function SiteHeader() {
         </button>
       </div>
       <WhatsAppButton />
+      <PaletteSwitcher />
     </header>
   );
 }
