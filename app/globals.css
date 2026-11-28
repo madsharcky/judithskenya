@@ -6,3 +6,103 @@
   buttons and cards. This file only pulls in Tailwind's reset/utilities layer —
   every rule the kit sets is unlayered CSS and wins over it.
 */
+
+/*
+  The one component the kit has no recipe for: the persistent WhatsApp element
+  (brief Q18). It sits under the nav's z-index so the phone's full-screen sheet
+  covers it, and it is the only place the WhatsApp green appears.
+*/
+.wa {
+  position: fixed;
+  right: var(--gut);
+  bottom: calc(var(--s-6) + env(safe-area-inset-bottom));
+  z-index: 9;
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--p-bg);
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+/* the phone sheet covers the whole screen: the element hides with it (system.js toggles is-open) */
+.nav.is-open .wa {
+  display: none;
+}
+
+.wa:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+.wa:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 639px) {
+  .wa {
+    bottom: calc(var(--s-5) + env(safe-area-inset-bottom));
+    width: 52px;
+    height: 52px;
+  }
+}
+/*
+  Prototype-only palette switcher (#17): a fixed pill bottom-left, visually distinct
+  from the kit (it is meant to be deleted, not to ship). WhatsApp green appears nowhere
+  here; the toggle is plain kit tokens. On a phone it hides: the shell's hero is the
+  page and a fixed affordance over the footer would only pair with phones, where the
+  kit's footer is taller than the screen and the prototype is meant for the desktop
+  review; the 44px-tall buttons (and the shift on small screens) live for the rest.
+*/
+.palette-switcher {
+  position: fixed;
+  left: var(--gut);
+  bottom: calc(var(--s-6) + env(safe-area-inset-bottom));
+  z-index: 9;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
+  border: 1px dashed var(--line-strong, #888);
+  border-radius: 999px;
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font-family: var(--font-text, system-ui, sans-serif);
+  font-size: 11px;
+  line-height: 1;
+}
+.palette-switcher__tag {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--p-ink);
+}
+.palette-switcher__label {
+  color: var(--p-ink);
+}
+.palette-switcher__btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--line, #ccc);
+  background: transparent;
+  color: var(--p-ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.palette-switcher__btn[aria-pressed="true"] {
+  background: var(--p-action);
+  border-color: var(--p-action);
+  color: var(--p-action-ink);
+}
+.palette-switcher__btn:focus-visible {
+  outline: 2px solid var(--p-action);
+  outline-offset: 2px;
+}
+@media (max-width: 639px) {
+  /* prototype affordance for the desktop review: hidden on a phone */
+  .palette-switcher { display: none; }
+}

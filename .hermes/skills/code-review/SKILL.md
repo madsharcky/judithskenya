@@ -59,6 +59,8 @@ Each smell reads *what it is* → *how to fix*; match it against the diff:
 
 Issue both sub-agent calls together, in the foreground, and aggregate the reports they return.
 
+**Profile override**: when the profile forbids subagents (e.g. a local LLM that is too slow under concurrent load) or the user says so, skip the fan-out and run both axes yourself in the main session, reporting them under the same `## Standards` and `## Spec` headings. Do not contort the profile into fake fan-out.
+
 **Standards sub-agent prompt** should include:
 
 - The full diff command and commit list.
