@@ -3,7 +3,6 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import PaletteSwitcher from "@/components/palette-switcher";
 import "./globals.css";
 
 /*
@@ -100,7 +99,6 @@ h3 { font-family: var(--font-text); letter-spacing: -0.01em; }
         <SiteHeader />
         <main id="top">{children}</main>
         <SiteFooter />
-        <PaletteSwitcher />
         <Script src="/assets/system.js" type="module" strategy="afterInteractive" />
         <Script src="/assets/motion/motion.js" type="module" strategy="afterInteractive" />
         <Script src="/assets/layout/layout.js" type="module" strategy="afterInteractive" />
